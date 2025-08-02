@@ -1,88 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Domain Hijacked by ATR Max</title>
+  <title>Domain Taken Over</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
+    body {
       background: black;
       color: #00ff00;
       font-family: monospace;
-    }
-
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-
-    .message {
-      position: absolute;
-      z-index: 10;
-      width: 100%;
       text-align: center;
-      top: 30%;
-      color: #00ff00;
-      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
-      font-size: 2rem;
+      margin-top: 100px;
     }
-
-    .message h1 {
+    h1 {
       font-size: 2.5rem;
-      margin-bottom: 0.5em;
-    }
-
-    .message p {
-      font-size: 1.2rem;
+      text-shadow: 0 0 10px #0f0;
     }
   </style>
 </head>
 <body>
-  <canvas id="matrix"></canvas>
-  <div class="message">
-    <h1>💀 Domain is Taken Over 💀</h1>
-    <p>by <strong>ATR Max</strong></p>
-    <p>This is a harmless security demonstration</p>
-  </div>
-
-  <script>
-    const canvas = document.getElementById("matrix");
-    const ctx = canvas.getContext("2d");
-
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-
-    const letters = "01HACK3R$MATRIX#ATRMAX<>".split("");
-    const fontSize = 16;
-    const columns = canvas.width / fontSize;
-
-    const drops = Array(Math.floor(columns)).fill(1);
-
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "#0f0";
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-
-        drops[i]++;
-      }
-    }
-
-    setInterval(draw, 33);
-  </script>
+  <h1>💀 Domain is Taken Over 💀</h1>
+  <p>by <strong>ATR Max</strong></p>
+  <p>This is a harmless security demonstration</p>
 </body>
 </html>
